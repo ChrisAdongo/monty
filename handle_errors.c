@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 /**
- * print_m_error - Prints formatted error msgs to the std error stream.
+ * prnt_m_error - Prints formatted error msgs to the std error stream.
  *
  * @format: Format string for the error message.
  * @...: Additional arguments for the format string.
  *
  * Return: EXIT_FAILURE.
  */
-int print_m_error(const char *format, ...)
+int prnt_m_error(const char *format, ...)
 {
 	va_list args;
 
@@ -29,7 +29,7 @@ int print_m_error(const char *format, ...)
  */
 int empty_pop_error(unsigned int line_number)
 {
-	return (print_m_error("L%u: can't pop an empty stack\n", line_number));
+	return (prnt_m_error("L%u: can't pop an empty stack\n", line_number));
 }
 
 /**
@@ -41,7 +41,7 @@ int empty_pop_error(unsigned int line_number)
  */
 int empty_pint_error(unsigned int line_number)
 {
-	return (print_m_error("L%u: can't pint, stack empty\n", line_number));
+	return (prnt_m_error("L%u: can't pint, stack empty\n", line_number));
 }
 
 /**
@@ -54,5 +54,5 @@ int empty_pint_error(unsigned int line_number)
  */
 int short_stack_math_error(unsigned int line_number, char *operation)
 {
-	return (print_m_error("L%u: can't %s, stack short\n", line_number, operation));
+	return (prnt_m_error("L%u: can't %s, stack short\n", line_number, operation));
 }
