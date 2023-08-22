@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 /**
- * print_monty_error - Prints formatted error messages to the standard error stream.
+ * print_m_error - Prints formatted error msgs to the std error stream.
  *
  * @format: Format string for the error message.
  * @...: Additional arguments for the format string.
  *
  * Return: EXIT_FAILURE.
  */
-int print_monty_error(const char *format, ...)
+int print_m_error(const char *format, ...)
 {
 	va_list args;
 
@@ -21,7 +21,7 @@ int print_monty_error(const char *format, ...)
 }
 
 /**
- * empty_pop_error - Prints an error message when 'pop' is attempted on an empty stack.
+ * empty_pop_error - Prints an error msg when 'pop' is on an empty stack.
  *
  * @line_number: Line number where the error occurred.
  *
@@ -29,11 +29,11 @@ int print_monty_error(const char *format, ...)
  */
 int empty_pop_error(unsigned int line_number)
 {
-	return (print_monty_error("L%u: can't pop an empty stack\n", line_number));
+	return (print_m_error("L%u: can't pop an empty stack\n", line_number));
 }
 
 /**
- * empty_pint_error - Prints an error message when 'pint' is attempted on an empty stack.
+ * empty_pint_error - Prints an error msg when 'pint' is on an empty stack.
  *
  * @line_number: Line number where the error occurred.
  *
@@ -41,11 +41,11 @@ int empty_pop_error(unsigned int line_number)
  */
 int empty_pint_error(unsigned int line_number)
 {
-	return (print_monty_error("L%u: can't pint, stack empty\n", line_number));
+	return (print_m_error("L%u: can't pint, stack empty\n", line_number));
 }
 
 /**
- * short_stack_math_error - Prints an error message for math ops on a short stack.
+ * short_stack_math_error - Prints an error msg for math ops on a short stack.
  *
  * @line_number: Line number where the error occurred.
  * @operation: The specific operation attempted.
@@ -54,5 +54,5 @@ int empty_pint_error(unsigned int line_number)
  */
 int short_stack_math_error(unsigned int line_number, char *operation)
 {
-	return (print_monty_error("L%u: can't %s, stack too short\n", line_number, operation));
+	return (print_m_error("L%u: can't %s, stack short\n", line_number, operation));
 }
