@@ -5,7 +5,7 @@
  *
  * @num: The integer to be converted.
  *
- * Return: A pointer to the dynamically allocated string. NULL if memory allocation fails.
+ * Return: A pointer to the dynamically alloc str. NULL if mem alloc fails.
  */
 char *integer_to_string(int num)
 {
@@ -25,7 +25,7 @@ char *integer_to_string(int num)
 
 	if (!result)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	fill_string_buffer(temp, 10, result, length);
@@ -53,7 +53,7 @@ unsigned int absolute_value(int i)
 }
 
 /**
- * required_string_length - Calculates the required string length to represent a number in a given base.
+ * required_string_length - Calcs req str len to rep a number in a given base.
  *
  * @num: The number for which the length is calculated.
  * @base: The base of the number representation.
@@ -73,7 +73,7 @@ int required_string_length(unsigned int num, unsigned int base)
 }
 
 /**
- * fill_string_buffer - Fills a buffer with a number representation in a given base.
+ * fill_string_buffer - Fills a buf with a num rep in a given base.
  *
  * @num: The number to be represented.
  * @base: The base of the number representation.
@@ -81,7 +81,7 @@ int required_string_length(unsigned int num, unsigned int base)
  * @buffer_size: The size of the buffer in bytes.
  */
 void fill_string_buffer(unsigned int num, unsigned int base,
-                      char *buffer, int buffer_size)
+	char *buffer, int buffer_size)
 {
 	int remainder, i = buffer_size - 1;
 
