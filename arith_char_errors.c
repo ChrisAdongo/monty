@@ -11,7 +11,7 @@
  */
 int division_by_zero_error(unsigned int line_number)
 {
-	return (prnt_error("L%u: division by zero\n", line_number));
+	return (print_error("L%u: division by zero\n", line_number));
 }
 
 /**
@@ -24,5 +24,5 @@ int division_by_zero_error(unsigned int line_number)
  */
 int pchar_error(unsigned int line_number, char *message)
 {
-	return (prnt_error("L%u: can't pchar, %s\n", line_number, message));
+	return (print_error("L%u: can't pchar, %s\n", line_number, message));
 }
