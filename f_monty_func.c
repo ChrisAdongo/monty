@@ -6,7 +6,7 @@ void monty_convert_to_stack(stack_t **stack, unsigned int line_number);
 void monty_convert_to_queue(stack_t **stack, unsigned int line_number);
 
 /**
- * monty_rotate_left - Rotates top value of a stack_t linked list to the bot.
+ * monty_rotate_left - Rotates top val of a stack_t linked list to bottom.
  * @stack: A pointer to the top mode node of a stack_t linked list.
  * @line_number: The current working line number of a Monty bytecodes file.
  */
@@ -35,7 +35,7 @@ void monty_rotate_left(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_rotate_right - Rotates bot val of a stack_t linked list to top.
+ * monty_rotate_right - Rotates bottom val of a stack_t linked list to top.
  * @stack: A pointer to the top mode node of a stack_t linked list.
  * @line_number: The current working line number of a Monty bytecodes file.
  */
@@ -47,6 +47,7 @@ void monty_rotate_right(stack_t **stack, unsigned int line_number)
 	{
 		return;
 	}
+
 	top = (*stack)->next;
 	bottom = (*stack)->next;
 
@@ -54,6 +55,7 @@ void monty_rotate_right(stack_t **stack, unsigned int line_number)
 	{
 		bottom = bottom->next;
 	}
+
 	bottom->prev->next = NULL;
 	(*stack)->next = bottom;
 	bottom->prev = *stack;
