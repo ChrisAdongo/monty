@@ -88,7 +88,7 @@ char *get_int(int n);
 
 /* ERROR MESSAGES & ERROR CODES */
 int print_error(const char *format, ...);
-int malloc_error(void);...
+int malloc_error(void);
 int file_open_error(char *filename);
 int general_error(const char *error_message);
 int print_monty_error(const char *format, ...);
