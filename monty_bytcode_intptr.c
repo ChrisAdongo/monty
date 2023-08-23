@@ -99,8 +99,9 @@ void (*get_op_func_snake(char *opcode))(stack_t**, unsigned int)
 		{"queue", monty_queue},
 		{NULL, NULL}
 	};
+
 	int i;
-	
+
 	for (i = 0; op_funcs[i].opcode; i++)
 	{
 		if (strcmp(opcode, op_funcs[i].opcode) == 0)
