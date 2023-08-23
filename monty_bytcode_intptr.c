@@ -43,7 +43,7 @@ unsigned int token_arr_len_snake(void)
 }
 
 /**
- * is_empty_line_snake - Checks if a line read from getline only contains delimiters.
+ * is_empty_line_snake - Checks if line read fm getline only has delimiters.
  * @line: A pointer to the line.
  * @delims: A string of delimiter characters.
  *
@@ -100,6 +100,7 @@ void (*get_op_func_snake(char *opcode))(stack_t**, unsigned int)
 		{NULL, NULL}
 	};
 	int i;
+	
 	for (i = 0; op_funcs[i].opcode; i++)
 	{
 		if (strcmp(opcode, op_funcs[i].opcode) == 0)
