@@ -1,6 +1,32 @@
 #include <stdlib.h>
 
 /**
+ * count_words - Counts the number of words in a string.
+ *
+ * @str: The string to analyze.
+ * @delims: Delimiter characters.
+ *
+ * Return: The number of words in the string.
+ */
+int count_words(char *str, char *delims)
+{
+	int count = 0, pending = 1, i = 0;
+
+	while (*(str + i))
+	{
+		if (is_delimiter(str[i], delims))
+			pending = 1;
+		else if (pending)
+		{
+			pending = 0;
+			count++;
+		}
+		i++;
+	}
+	return (count);
+}
+
+/**
  * split_string - Splits a string into words based on delimiters.
  *
  * @str: The string to split.
@@ -109,32 +135,6 @@ int get_word_length(char *str, char *delims)
 		i++;
 	}
 	return (length);
-}
-
-/**
- * count_words - Counts the number of words in a string.
- *
- * @str: The string to analyze.
- * @delims: Delimiter characters.
- *
- * Return: The number of words in the string.
- */
-int count_words(char *str, char *delims)
-{
-	int count = 0, pending = 1, i = 0;
-
-	while (*(str + i))
-	{
-		if (is_delimiter(str[i], delims))
-			pending = 1;
-		else if (pending)
-		{
-			pending = 0;
-			count++;
-		}
-		i++;
-	}
-	return (count);
 }
 
 /**
