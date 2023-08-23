@@ -74,7 +74,7 @@ void monty_sub(stack_t **stack, unsigned int line_number);
 void monty_div(stack_t **stack, unsigned int line_number);
 void monty_mul(stack_t **stack, unsigned int line_number);
 void monty_mod(stack_t **stack, unsigned int line_number);
-void monty_print_char(stack_t **stack, unsigned int line_number);!
+void monty_print_char(stack_t **stack, unsigned int line_number);
 void monty_print_str(stack_t **stack, unsigned int line_number);
 void monty_rotate_left(stack_t **stack, unsigned int line_number);
 void monty_rotate_right(stack_t **stack, unsigned int line_number);
