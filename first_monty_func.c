@@ -15,12 +15,12 @@ void monty_push(stack_t **stack, unsigned int line_number)
 
 	if (new_node == NULL)
 	{
-		set_op_tok_error(malloc_error());
+		set_op_token_error(malloc_error());
 		return;
 	}
 	if (tokenized_ops[1] == NULL)
 	{
-		set_op_tok_error(no_int_error(line_number));
+		set_op_token_error(no_int_error(line_number));
 		return;
 	}
 	for (i = 0; tokenized_ops[1][i]; i++)
@@ -31,7 +31,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		}
 		if (tokenized_ops[1][i] < '0' || tokenized_ops[1][i] > '9')
 		{
-			set_op_tok_error(no_int_error(line_number));
+			set_op_token_error(no_int_error(line_number));
 			return;
 		}
 	}
@@ -90,7 +90,7 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 {
 	if ((*stack)->next == NULL)
 	{
-		set_op_tok_error(pint_error(line_number));
+		set_op_token_error(pint_error(line_number));
 		return;
 	}
 	printf("%d\n", (*stack)->next->n);
@@ -108,7 +108,7 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->next == NULL)
 	{
-		set_op_tok_error(pop_error(line_number));
+		set_op_token_error(pop_error(line_number));
 		return;
 	}
 	next_node = (*stack)->next->next;
@@ -133,7 +133,7 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(line_number, "swap"));
+		set_op_token_error(short_stack_error(line_number, "swap"));
 		return;
 	}
 
