@@ -62,6 +62,13 @@ int get_word_length(char *str, char *delims);
 int count_words(char *str, char *delims);
 char *find_next_word(char *str, char *delims);
 
+void set_op_tok_error(const char *message);
+const char *malloc_error(void);
+const char *no_int_error(unsigned int line_number);
+const char *pint_error(unsigned int line_number);
+const char *pop_error(unsigned int line_number);
+const char *short_stack_error(unsigned int line_number, const char *op);
+
 /* OPCODE FUNCTIONS */
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
