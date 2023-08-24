@@ -10,7 +10,7 @@
 #define DELIMS " \n\t\a\b"
 
 /* GLOBAL OPCODE TOKENS */
-extern char **op_toks;
+extern char **tokenized_ops;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
