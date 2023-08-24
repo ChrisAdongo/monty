@@ -1,5 +1,12 @@
 #include <stdlib.h>
 
+int is_delimiter(char ch, char *delims);
+int get_word_length(char *str, char *delims);
+char *find_next_word(char *str, char *delims);
+
+int count_words(char *str, char *delims);
+char **split_string(char *str, char *delims);
+
 /**
  * count_words - Counts the number of words in a string.
  *
